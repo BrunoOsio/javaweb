@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f = "http://java.sun.com/jsf/core">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
@@ -16,7 +17,42 @@
 
                     <h:outputLabel value ="Senha: "/>    
                     <h:inputSecret maxlength="16"/>
+
+                    <h:outputLabel value="Observação: "/>
+                    <h:inputTextarea cols="6" rows="10"/>
+
+                    <h:outputLabel value="Interesses: "/>
+                    <h:selectManyCheckbox>
+                        <f:selectItem itemLabel="Viagem" itemValue="1" />
+                        <f:selectItem itemLabel="Cinema" itemValue="2" />
+                        <f:selectItem itemLabel="Video-game" itemValue="3" />
+                    </h:selectManyCheckbox>
+
+                    <h:outputLabel value="Estado Civil: "/>
+                    <h:selectOneRadio>
+                        <f:selectItem itemLabel="Solteiro" itemValue="4"/>
+                        <f:selectItem itemLabel="Casado" itemValue="5"/>
+                    </h:selectOneRadio>
+
+                    <h:outputLabel value="Estado Federativo: "/>
+                    <h:selectOneMenu>
+                        <f:selectItem itemLabel="RS" itemValue="RS"/>
+                        <f:selectItem itemLabel="RJ" itemValue="RJ"/>
+                        <f:selectItem itemLabel="SP" itemValue="SP"/>
+                        
+                    </h:selectOneMenu>
+
                 </h:panelGrid>
+
+                <h:panelGrid columns="4">
+                    <h:commandButton value="Submitar"/>
+                    <h:commandButton value="Cancelar"/>
+                    <h:commandButton value="Buscar"/>
+                    <h:commandButton value="Editar"/>
+
+                    <h:commandLink value="Clique aqui"/>
+                </h:panelGrid>
+
             </h:form>
         </div>
 
